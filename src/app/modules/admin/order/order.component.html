@@ -1,0 +1,93 @@
+<div class="main-content-container">
+    <div class="page-topbar">
+        <div class="page-heading">
+            <span>
+                <h5 style="color: #181c32;">Order Lists</h5>
+                <p style="color:#a8abbc ;">Dashboard - Orders</p>
+            </span>
+            <span>
+              
+                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Add Products
+                </button> -->
+            </span>
+        </div>
+
+    </div>
+    <div class="page-content">
+        <div class="container-fluid custom-table">
+            <div class="merchent__table">
+               
+                <div class="common_search">
+                    <span>
+                        <input type="text" (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+                    </span> &nbsp;
+                   
+                </div>
+              
+                <div class="mat-elevation-z8">
+                  <table class="table" mat-table [dataSource]="dataSource" matSort>
+                    <ng-container matColumnDef="OrderPrefix">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Order Prefix</th>
+                        <td mat-cell *matCellDef="let row">
+                            {{row.order_prefix}}
+                        </td>
+                      </ng-container>
+                    <ng-container matColumnDef="User">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>User</th>
+                      <td mat-cell *matCellDef="let row">{{ row.user_id }}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="PaymentType">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Payment Type</th>
+                        <td mat-cell *matCellDef="let row">{{ row.payment_type }}</td>
+                      </ng-container>
+                      <ng-container matColumnDef="TotalAmount">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Amount</th>
+                        <td mat-cell *matCellDef="let row">Rs.{{ row.total_amount==null ? 0 : row.total_amount }}</td>
+                      </ng-container>
+                      <ng-container matColumnDef="PaymentStatus">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Payment Status</th>
+                        <td mat-cell *matCellDef="let row"><span [ngClass]="{'active': row.active == 0, 'inactive': row.payment_status==null}">{{ row.payment_status==null ? 'Not Updates' : row.total_amount }}</span></td>
+                      </ng-container>
+                
+                    
+                    <ng-container matColumnDef="OrderStatus">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>OrderStatus</th>
+                      <td mat-cell *matCellDef="let row" > <span [ngClass]="{'active': row.active == 1, 'inactive': row.active == 0}">{{ row.active == 1 ? 'Active' : 'Inactive' }}</span></td>
+                    </ng-container>
+              
+                  
+                    <ng-container matColumnDef="Actions">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+                      <td mat-cell *matCellDef="let row">
+                        <!-- <span><img src="../../../../assets/icons/edit.svg" alt="" width="20px"></span> &nbsp; &nbsp;
+                  <span> <img src="../../../../assets/icons/delete.svg" alt=""  [swal]="deleteSwal" width="20px"></span> &nbsp; &nbsp; -->
+                  <span> <img src="../../../../assets/icons/three-dots.svg" width="20px" alt=""></span>
+                    
+                        
+                
+                     
+                     </td>
+                    </ng-container>
+              
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+              
+                    <!-- Row shown when there is no matching data. -->
+                    <tr class="mat-row" *matNoDataRow>
+                      <td class="mat-cell" colspan="4">
+                        No data matching the filter "{{ input.value }}"
+                      </td>
+                    </tr>
+                  </table>
+              
+                  <mat-paginator
+                    [pageSizeOptions]="[ 25, 50, 100,500,1000]"
+                    aria-label="Select page of users"
+                  ></mat-paginator>
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+</div>

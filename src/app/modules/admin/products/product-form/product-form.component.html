@@ -1,0 +1,113 @@
+
+    <div class="container-fluid">
+        <div class="row p-3">
+            <div class="col-lg-12">
+                <h4>Create Product</h4>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="my-3">
+                    <mat-form-field class="example-form-field" appearance="fill">
+                        <mat-label>Product Name</mat-label>
+                        <input matInput type="text" [(ngModel)]="product.name">
+
+                    </mat-form-field>
+
+                </div>
+
+                <div class="my-3">
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Category</mat-label>
+                        <mat-select [(ngModel)]="product.category_id">
+                            <mat-option *ngFor="let food of category" [value]="food.id">
+                                {{food.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="my-3">
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Vendor</mat-label>
+                        <mat-select [(ngModel)]="product.vendor_id">
+                            <mat-option *ngFor="let item of vendor" [value]="item.id">
+                                {{item.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Product Description</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" [(ngModel)]="product.description" cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="my-3">
+                    <!--Preview Image-->
+                    <img [src]="img_url" alt="" width="100%" height="300px">
+                    <div class="my-3">
+
+                        <input type="file" name="file" class="form-control" id="banner_image"
+                            [(ngModel)]="product.image_url" placeholder="Upload Product Image"
+                            (change)="getFile($event)">
+                    </div>
+
+                </div>
+               
+            </div>
+
+            <div class="col-lg-4">
+                <div class="my-3">
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Product MRP</mat-label>
+                        <input matInput type="text" [(ngModel)]="product.product_mrp">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="my-3">
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Product Selling Price</mat-label>
+                        <input matInput type="text" [(ngModel)]="product.selling_price">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="my-3">
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Product Purchase Price</mat-label>
+                        <input matInput type="text" [(ngModel)]="product.purchase_price">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="my-3">
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Product Quantity</mat-label>
+                        <input matInput type="text" [(ngModel)]="product.quantity">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="my-3">
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label> Unit</mat-label>
+                        <input matInput type="text" [(ngModel)]="product.unit">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="my-3">
+                    <button class="btn btn-success w-100 py-3" (click)="SaveData()">Save</button>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="my-3">
+                    <button class="btn btn-danger w-100 py-3" matDialogClose>Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+

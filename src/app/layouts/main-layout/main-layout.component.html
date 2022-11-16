@@ -1,0 +1,159 @@
+<div class="main-wrapper">
+    <div id="side-wrapper" class="side-wrapper">
+        <div class="brand-logo">
+            <span> <span style="color:#65ff7a;padding: 8px;"><img src="../../../assets/logo-2.png" width="180px"
+                        alt=""></span>
+
+                <!-- <span><h5 onClick=toggleSidebar()>Admin <span style="color:#6571ff">Panel</span> -->
+            </span>
+
+
+        </div>
+        <div class="menu-items">
+            <ul>
+                <li>
+                    <span style="text-transform:uppercase; color:#fff;font-weight:600;font-size:13px;" id="side-heading"
+                        class="side">Main</span>
+                    <ul class="sidebar-menu-item" class="py-1">
+                        <a routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]={exact:false} >
+                            <li ><span><img src="../../../assets/icons/white/dashboard.svg" width="24px"
+                                        alt=""></span> <span class="px-4">Dashboard</span></li>
+                        </a>
+                    </ul>
+                </li>
+                <li>
+                    <span style="text-transform:uppercase; color:#fff;font-weight:600;font-size:13px;" id="side-heading"
+                        class="side">Master</span>
+                    <ul class="sidebar-menu-item" class="py-1">
+
+
+                        <li><a routerLink="/banners" routerLinkActive="active"><span><img src="../../../assets/icons/white/slider.svg" width="24px"
+                            alt=""></span> <span class="px-4">Banners</span></a></li>
+                        <li><a  routerLink="/category" routerLinkActive="active"><span><img src="../../../assets/icons/white/categories.svg" width="24px"
+                                        alt=""></span> <span class="px-4">Category</span></a></li>
+                        <li><a  routerLink="/products" routerLinkActive="active"><span><img src="../../../assets/icons/white/cubes.svg" width="24px"
+                                        alt=""></span> <span class="px-4">Products</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span style="text-transform:uppercase; color:#fff;font-weight:600;font-size:13px;" id="side-heading"
+                        class="side">Orders & sales</span>
+                    <ul class="sidebar-menu-item" class="py-1">
+                        <li><a routerLink="/order" routerLinkActive="active"><span><img src="../../../assets/icons/white/checkout.svg" width="24px"
+                                        alt=""></span> <span class="px-4">Orders</span></a></li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div id="mobile-sidebar" class="side-wraper-mobile">
+        <div class="side-mobile-brand">
+            <span>
+                <img src="../../../assets/logo-2.png" width="180px"
+                alt="">
+            </span>
+
+            <span class="close-icon" (click)="mobileSidebarClose()">
+                <img src="../../../assets/icons/white/cancel.svg" width="16px" alt="">
+            </span>
+
+        </div>
+        <div class="menu-items">
+            <ul>
+                <li>
+                    <span style="text-transform:uppercase; color:#fff;font-weight:600;font-size:13px;" id="side-heading"
+                        class="side">Main</span>
+                    <ul class="sidebar-menu-item" class="py-1">
+                        <a routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]={exact:false} >
+                            <li ><span><img src="../../../assets/icons/white/dashboard.svg" width="24px"
+                                        alt=""></span> <span class="px-4">Dashboard</span></li>
+                        </a>
+                    </ul>
+                </li>
+                <li>
+                    <span style="text-transform:uppercase; color:#fff;font-weight:600;font-size:13px;" id="side-heading"
+                        class="side">Master</span>
+                    <ul class="sidebar-menu-item" class="py-1">
+
+
+                        <li><a routerLink="/banners" routerLinkActive="active"><span><img src="../../../assets/icons/white/slider.svg" width="24px"
+                            alt=""></span> <span class="px-4">Banners</span></a></li>
+                        <li><a  routerLink="/category" routerLinkActive="active"><span><img src="../../../assets/icons/white/categories.svg" width="24px"
+                                        alt=""></span> <span class="px-4">Category</span></a></li>
+                        <li><a  routerLink="/products" routerLinkActive="active"><span><img src="../../../assets/icons/white/cubes.svg" width="24px"
+                                        alt=""></span> <span class="px-4">Products</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span style="text-transform:uppercase; color:#fff;font-weight:600;font-size:13px;" id="side-heading"
+                        class="side">Orders & sales</span>
+                    <ul class="sidebar-menu-item" class="py-1">
+                        <li><a routerLink="/order" routerLinkActive="active"><span><img src="../../../assets/icons/white/checkout.svg" width="24px"
+                                        alt=""></span> <span class="px-4">Orders</span></a></li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div id="content-wrapper" class="content-wrapper">
+        <div class="main-navbar-top">
+            <div class="search-bar"><span class="menu-lg"><img src="../../../assets/icons/white/hamburger.svg"
+                        style="color:white; cursor:pointer;" width="32px" alt="" (click)="toggleSidebar()"></span> <span
+                    class="menu-mobile"><img src="../../../assets/icons/white/hamburger.svg"
+                        style="color:white; cursor:pointer;" width="32px" alt="" (click)="mobileSidebar()"></span>
+            </div>
+            <div class="navbar-menu">
+                <span class="fullscreen px-2 pointer" data-toggle="tooltip" data-placement="bottom"
+                    title="Fullscreen Toggle">
+                    <img src="../../../assets/icons/white/full-screen.svg" width="24px" alt="">
+
+
+                </span>
+
+                <span class="menu-toggle px-2 pointer" data-toggle="tooltip" data-placement="bottom" title="Messages">
+                    <img src="../../../assets/icons/white/notification.svg" width="24px" alt="">
+                </span>
+                <span class="menu-toggle pl-2 pointer" data-toggle="tooltip" data-placement="bottom" title="Profile">
+                    <img src="../../../assets/icons/white/profile.svg" width="24px" alt="" (click)="profileDropdown()">
+                    <div id="profile-ddmenu" class="drop-down-menu-hidden">
+                        <span class="ddmenu-heading">
+                            <span class="profile-image px-2">
+                                <img src="../../../assets/icons/white/profile.svg" width="50px" alt="">
+                            </span>
+                            <span class="login-details">
+                                <span class="name">
+                                    <span class="user-name" style="font-size:16px;">{{name}}</span> <br>
+                                    <span class="user-role">{{username}}</span>
+                                </span>
+                                <!-- <span class="email">
+                                    <span class="user-email">adithyainfo811@gmail.com</span>
+                                </span> -->
+                            </span>
+
+                        </span>
+                        <span class="dd-menu-body">
+                            <ul>
+                                <!-- dashboard -->
+
+                                <!-- <li><a href="#"> <img src="../../../assets/icons/white/notification.svg" width="16px" alt="">&nbsp; &nbsp; Settings</a></li> -->
+                                <li><a (click)="logout()"><img src="../../../assets/icons/lavender/logout.svg"
+                                            width="20px" alt="">&nbsp; &nbsp; &nbsp;Logout</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="main-content-container">
+            <router-outlet></router-outlet>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4>{{label}}  Banner</h4>
+        </div>
+        <div class="col-lg-12">
+            <div class="my-3">
+                <!-- <label for="category" class="form-label">Category</label> -->
+                
+                <input type="text" class="form-control" id="bannername" [(ngModel)]="banner.name" placeholder="Enter Banner Here">
+              </div>
+
+
+            
+        </div>
+        <div class="col-lg-12">
+            <!--Preview Image-->
+            <img [src]="img_url" alt="" width="100%">
+            <div class="my-3">
+                <!-- <label for="category" class="form-label">Category</label> -->
+                <input type="file" name="img_url" class="form-control" id="banner_image" [(ngModel)]="banner.file" placeholder="Upload Banner" (change)="getFile($event)">
+            </div>
+
+
+            
+        </div>
+        <div class="col-lg-6">
+            <button type="button" (click)="SaveData()" class="btn btn-success w-100"> <img  src="../../../../../assets/icons/Eclipse-1s-200px.gif" *ngIf="loader" width="24px" alt="">Save</button>
+
+        </div>
+        <div class="col-lg-6">
+            <button type="button" class="btn btn-danger w-100" mat-dialog-close>Cancel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+<div class="main-content-container">
+    <div class="page-topbar">
+        <div class="page-heading">
+            <span>
+                <h5 style="color: #181c32;">Dashboard</h5>
+                <p style="color:#a8abbc ;">Dashboard Overview</p>
+            </span>
+            <span>
+
+                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Add Products
+                </button> -->
+            </span>
+        </div>
+
+    </div>
+    <div class="page-content">
+        <div class="container-fluid g-0 ">
+            <div class="row">
+
+                <div class="col-lg-3">
+                    <div class="card_one bg-c-blue">
+                        <div class="count_icon">
+                            <img src="../../../../assets/icons/white/User_light.svg" width="50px" alt="">
+                        </div>
+                        <div class="title_value">
+                            <span>Users</span>
+                            <span>{{dashboardCount.no_of_users}}</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card_one bg-c-green">
+                        <div class="count_icon">
+                            <img src="../../../../assets/icons/white/checkout.svg" width="50px" alt="">
+                        </div>
+                        <div class="title_value">
+                            <span>Orders</span>
+                            <span>{{dashboardCount.no_of_orders}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card_one bg-c-yellow">
+                        <div class="count_icon">
+                            <img src="../../../../assets/icons/white/Calendar_light.svg" width="50px" alt="">
+                        </div>
+                        <div class="title_value">
+                            <span>Today's Order</span>
+                            <span>{{dashboardCount.todays_order_count}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card_one bg-c-pink">
+                        <div class="count_icon">
+                            <img src="../../../../assets/icons/white/Chart_light.svg" width="50px" alt="">
+                        </div>
+                        <div class="title_value">
+                            <span>Total Transaction</span>
+                            <span>{{dashboardCount.total_transaction_value}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-8 custom-table">
+                    <div class="page-heading">
+                        <span>
+                            <h5 style="color:#000627;">Month Sales Overview</h5>
+                        </span>
+                        <span class="d-flex">
+                            
+                            <select class="form-select"  [(ngModel)]="monthInsight.month">
+                                <option value="" disabled selected="selected">Select Month</option>
+                                <option value="1">Jan</option>
+                                <option value="2">Feb</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">Aug</option>
+                                <option value="9">Sep</option>
+                                <option value="10">Oct</option>
+                                <option value="11">Nov</option>
+                                <option value="12">Dec</option>
+                            </select> &nbsp;
+                            <select class="form-select"  [(ngModel)]="monthInsight.year">
+                                <option  value="" disabled selected>Select Month</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                              
+                            </select> &nbsp;
+                         <button type="button" class="btn btn-primary" (click)="getMonthInsight()" >Get</button>
+                        </span>
+                    </div>
+                    <div class="month_chart">
+                        <!-- <canvas id="monthChart" *ngIf="loader"  >
+
+                        </canvas> -->
+                        <chart [type]="type" [data]="data" [options]="options"></chart>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 custom-table">
+                    <div class="page-heading">
+                        <span>
+
+                            <h5 style="color:#000627;">Sales Insight</h5>
+                        </span>
+                    </div>
+                    <div class="chart-container" style="position: relative; height:50vh; ">
+                        <canvas id="salesInsight"    >
+
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
