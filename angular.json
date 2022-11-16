@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "flash-grocy-admin": {
+    "demo-admin": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/flash-grocy-admin",
+            "outputPath": "dist/demo-admin",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "flash-grocy-admin:build:production"
+              "browserTarget": "demo-admin:build:production"
             },
             "development": {
-              "browserTarget": "flash-grocy-admin:build:development"
+              "browserTarget": "demo-admin:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "flash-grocy-admin:build"
+            "browserTarget": "demo-admin:build"
           }
         },
         "test": {
